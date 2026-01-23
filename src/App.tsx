@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Loader2, Sparkles, MapPin, User, MessageSquare } from 'lucide-react';
 
 export default function SimpsonsGenerator() {
@@ -15,6 +15,12 @@ export default function SimpsonsGenerator() {
   const [loading, setLoading] = useState(false);
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
+
+  interface Example {
+  character: string;
+  location: string;
+  prompt: string;
+}
 
   const handleGenerate = async () => {
     setLoading(true);
@@ -63,7 +69,7 @@ export default function SimpsonsGenerator() {
     { character: 'Lisa Simpson', location: 'School', prompt: 'saxophone' }
   ];
 
-  const loadExample = (example) => {
+  const loadExample = (example: Example) => {
     setCharacter(example.character);
     setLocation(example.location);
     setPromptWord(example.prompt);
