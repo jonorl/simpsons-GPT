@@ -59,7 +59,9 @@ export default function SimpsonsGenerator() {
     setSpaceStatus("checking");
     try {
       const { Client } = await import("@gradio/client");
-      await Client.connect("jonorl/simpsons");
+      await Client.connect("jonorl/simpsons", {
+        token: import.meta.env.VITE_HF_TOKEN,
+      });
       setSpaceStatus("ready");
     } catch (err) {
       console.error("Status check error:", err);
@@ -71,7 +73,9 @@ export default function SimpsonsGenerator() {
     setWakingUp(true);
     try {
       const { Client } = await import("@gradio/client");
-      await Client.connect("jonorl/simpsons");
+      await Client.connect("jonorl/simpsons", {
+        token: import.meta.env.VITE_HF_TOKEN,
+      });
       setSpaceStatus("ready");
     } catch (err) {
       console.error("Wake up error:", err);
@@ -90,7 +94,9 @@ export default function SimpsonsGenerator() {
       // Import Gradio client dynamically
       const { Client } = await import("@gradio/client");
 
-      const client = await Client.connect("jonorl/simpsons");
+      const client = await Client.connect("jonorl/simpsons", {
+        token: import.meta.env.VITE_HF_TOKEN,
+      });
 
       const result = await client.predict("/generate_dialogue", {
         character: character,
