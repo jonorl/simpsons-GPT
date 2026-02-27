@@ -554,7 +554,7 @@ export default function SimpsonsGenerator() {
             </p>
             <div className="flex items-center justify-center gap-6 text-sm">
               <a
-                href="https://jonathan-orlowski.pages.dev/"
+                href="https://jonathan-orlowski.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-400 transition-colors"
